@@ -1,0 +1,31 @@
+.board{
+    text-align: center;
+    width: 640px;
+    height: 640px;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* //board peices */
+.a,.b,.c,.d,.e,.f,.g,.h{
+    width: 75px;
+    height: 80px;
+    background-color: gray;
+    display: table-cell;
+    vertical-align:middle;
+    border: 2px solid white;
+}
+/* colored board peices */
+.black {
+    background-color: #607d8b
+}
+.white {
+    background-color: #9e9e9e;
+}
+/* rock image */
+img[src="rock.png"]{
+    width: 40px;
+    height: 40px;
+    transition: all .100s;
+}
+

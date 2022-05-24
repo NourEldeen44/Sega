@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="icon" href="rock.png" type="image">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="watch.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+                integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+                crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body onclick="cancelMove(event)">
+        <div class="aboutGame">
+                <button class="Resetbtn" onclick="location.reload()">New Game</button>
+                <div id="notify" style="width:95% ;">
+                        continue playing ...
+                </div>
+                <!-- Sounds -->
+                <audio loop id="audio">
+                        <source src="audio.mp3">
+                </audio>
+                <div id="playaudio" style="width:fit-content; margin: 0 auto;font-size:2rem;" onclick="musicPlay()">
+                        <i class="fa-solid fa-volume-low"></i>
+                </div>
+                <!-- //click sound -->
+                <div>
+                        <audio src="click.wav" id="click-sound"></audio>
+                </div>
+                <!-- Watch -->
+                <div class="test-div">
+                        <div class="ar-1"></div>
+                        <div class="ar-2"></div>
+                        <div class="ar-3"></div>
+                        <div class="ar-4"></div>
+                        <div class="one">&#8544;</div>
+                        <div class="two">&#8545;</div>
+                        <div class="four">&#8547;</div>
+                        <div class="five">&#8548;</div>
+                        <div class="seven">&#8550;</div>
+                        <div class="eight">&#8551;</div>
+                        <div class="ten">&#8553;</div>
+                        <div class="eleven">&#8554;</div>
+                        <div class="watch-hand-secs"></div>
+                        <div class="watch-hand-mins"></div>
+                        <div class="watch-hand-hrs"></div>
+                </div>
+        </div>
+
+        <div class="board">
+
+                <div class="row row-8">
+                        <div class="a white"><img src="rock.png" alt="rock" id="rock9" style="filter: brightness(125%)"
+                                        class="whiteRock"></div>
+                        <div class="b white"><img src="rock.png" alt="rock" id="rock10" style="filter: brightness(125%)"
+                                        class="whiteRock"></div>
+                        <div class="c white"><img src="rock.png" alt="rock" id="rock11" style="filter: brightness(125%)"
+                                        class="whiteRock"></div>
+                        <div class="d white"><img src="rock.png" alt="rock" id="rock12" style="filter: brightness(125%)"
+                                        class="whiteRock"></div>
+                        <div class="e white"><img src="rock.png" alt="rock" id="rock13" style="filter: brightness(125%)"
+                                        class="whiteRock"></div>
+                        <div class="f white"><img src="rock.png" alt="rock" id="rock14" style="filter: brightness(125%)"
+                                        class="whiteRock"></div>
+                        <div class="g white"><img src="rock.png" alt="rock" id="rock15" style="filter: brightness(125%)"
+                                        class="whiteRock"></div>
+                        <div class="h white"><img src="rock.png" alt="rock" id="rock16" style="filter: brightness(125%)"
+                                        class="whiteRock"></div>
+                </div>
+                <div class="row row-7">
+                        <div class="a white"></div>
+                        <div class="b white"></div>
+                        <div class="c white"></div>
+                        <div class="d white"></div>
+                        <div class="e white"></div>
+                        <div class="f white"></div>
+                        <div class="g white"></div>
+                        <div class="h white"></div>
+                </div>
+                <div class="row row-6">
+                        <div class="a white"></div>
+                        <div class="b white"></div>
+                        <div class="c white"></div>
+                        <div class="d white"></div>
+                        <div class="e white"></div>
+                        <div class="f white"></div>
+                        <div class="g white"></div>
+                        <div class="h white"></div>
+                </div>
+                <div class="row row-5">
+                        <div class="a white"></div>
+                        <div class="b white"></div>
+                        <div class="c white"></div>
+                        <div class="d white"></div>
+                        <div class="e white"></div>
+                        <div class="f white"></div>
+                        <div class="g white"></div>
+                        <div class="h white"></div>
+                </div>
+
+                <div class="row row-4">
+                        <div class="a black"></div>
+                        <div class="b black"></div>
+                        <div class="c black"></div>
+                        <div class="d black"></div>
+                        <div class="e black"></div>
+                        <div class="f black"></div>
+                        <div class="g black"></div>
+                        <div class="h black"></div>
+                </div>
+                <div class="row row-3">
+                        <div class="a black"></div>
+                        <div class="b black"></div>
+                        <div class="c black"></div>
+                        <div class="d black"></div>
+                        <div class="e black"></div>
+                        <div class="f black"></div>
+                        <div class="g black"></div>
+                        <div class="h black"></div>
+                </div>
+                <div class="row row-2">
+                        <div class="a black"></div>
+                        <div class="b black"></div>
+                        <div class="c black"></div>
+                        <div class="d black"></div>
+                        <div class="e black"></div>
+                        <div class="f black"></div>
+                        <div class="g black"></div>
+                        <div class="h black"></div>
+                </div>
+                <div class="row row-1">
+                        <div class="a black"><img src="rock.png" alt="rock" id="rock1" style="filter: invert(100%);"
+                                        class="blackRock">
+                        </div>
+                        <div class="b black"><img src="rock.png" alt="rock" id="rock2" style="filter: invert(100%);"
+                                        class="blackRock">
+                        </div>
+                        <div class="c black"><img src="rock.png" alt="rock" id="rock3" style="filter: invert(100%);"
+                                        class="blackRock">
+                        </div>
+                        <div class="d black"><img src="rock.png" alt="rock" id="rock4" style="filter: invert(100%);"
+                                        class="blackRock">
+                        </div>
+                        <div class="e black"><img src="rock.png" alt="rock" id="rock5" style="filter: invert(100%);"
+                                        class="blackRock">
+                        </div>
+                        <div class="f black"><img src="rock.png" alt="rock" id="rock6" style="filter: invert(100%);"
+                                        class="blackRock">
+                        </div>
+                        <div class="g black"><img src="rock.png" alt="rock" id="rock7" style="filter: invert(100%);"
+                                        class="blackRock">
+                        </div>
+                        <div class="h black"><img src="rock.png" alt="rock" id="rock8" style="filter: invert(100%);"
+                                        class="blackRock">
+                        </div>
+                </div>
+        </div>
+        <div class="aboutGame">
+                <h2>Player Role: <img src="rock.png" style="filter: brightness(125%); margin-left: 2rem;" id="role">
+                </h2>
+                <div class="timer">
+                        Available Time:<span id="time"> 60 </span>
+                </div>
+        </div>
+
+
+</body>
+<script src="script.js"></script>
+
+</html>

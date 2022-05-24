@@ -1,0 +1,97 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+body{
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap:wrap;
+
+
+    background: linear-gradient(315deg, transparent 75%, rgb(253, 199, 246) 0)-10px 0,
+    linear-gradient(45deg, transparent 75%, rgb(253, 199, 246) 0)-10px 0,
+    linear-gradient(135deg, rgb(250, 217, 246) 50%, transparent 0) 0 0,
+    linear-gradient(45deg, rgb(191, 191, 247) 50%, rgb(168, 168, 247) 0) 0 0 rgb(168, 168, 247);
+    background-size: 20px 20px;
+/*     
+    background:
+    linear-gradient(27deg, rgb(252, 233, 250) 5px, transparent 5px) 0 5px,
+    linear-gradient(207deg, rgb(252, 233, 250) 5px, transparent 5px) 10px 0px,
+    linear-gradient(27deg, rgb(253, 199, 246) 5px, transparent 5px) 0px 10px,
+    linear-gradient(207deg, rgb(253, 199, 246) 5px, transparent 5px) 10px 5px,
+    linear-gradient(90deg, rgb(207, 207, 248) 10px, transparent 10px),
+    linear-gradient(rgb(191, 191, 247) 25%, rgb(250, 217, 246) 25%, rgb(250, 217, 246) 50%, transparent 50%, transparent 75%, rgb(247, 204, 241) 75%, rgb(247, 204, 241));
+    background-color: rgb(168, 168, 247);
+    background-size: 20px 20px; */
+}
+@media screen and (max-width:992px) {
+    body{
+        justify-content: center;
+    }
+}
+
+/**************************************** Game *****************************************/
+.board{
+    text-align: center;
+    width: 560px;
+    height: 560px;
+    margin: auto auto;
+    border: 51.4px solid;
+    border-image-source: url("./border.png");
+    border-image-slice:40;
+    box-sizing: content-box;
+}
+
+/* //board peices */
+.a,.b,.c,.d,.e,.f,.g,.h{
+    width: 70px;
+    height: 70px;
+    background-color: gray;
+    display: table-cell;
+    vertical-align:middle;
+    border: 1px solid white;
+}
+
+/* colored board peices */
+.black {
+    background-color: rgb(168, 168, 247);
+}
+.white {
+    background-color: rgb(253, 199, 246);
+}
+
+/* rock image */
+img[src="rock.png"]{
+    width: 40px;
+    height: 40px;
+    transition: all .100s;
+}
+
+/**************************************** About Game *****************************************/
+.aboutGame{
+    width: 25%;
+    padding: 2%;
+    text-align: center;
+}
+.aboutGame>h2,
+.timer,
+.Resetbtn,
+#notify{
+    /* background-color: rgba(43, 43, 43, 0.507); */
+    /* background-color: rgba(255, 255, 255, 0.479); */
+    /* background-color: rgba(168, 168, 247, 0.452); */
+    background-color:black;
+    color: white;
+    padding: 5%;
+    border-radius: 8px;
+    vertical-align: middle;
+    height: max-content;
+    width: max-content;
+    border: 1px solid black;
+    margin: 0 auto 20px auto;
+}
+.Resetbtn{
+    cursor: pointer;
+}
+

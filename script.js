@@ -250,10 +250,8 @@ function Timer() {
         ? (document.getElementById("role").style.filter = "invert(100%)")
         : (document.getElementById("role").style.filter = "brightness(125%)");
       clearInterval(timer);
-      document.getElementById("time").innerHTML = "Time out !!";
-      setTimeout(function(){
       Timer();
-      },500)
+      document.getElementById("time").innerHTML = "0";
     }
   }, 1000);
 }

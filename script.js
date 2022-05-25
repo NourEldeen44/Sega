@@ -301,3 +301,13 @@ root.style.setProperty("--minDeg", `${parsedMin()}` + "deg");
 root.style.setProperty("--minMax", `${parsedMin() + 360}` + "deg");
 root.style.setProperty("--secDeg", `${parsedSec()}` + "deg");
 root.style.setProperty("--secMax", `${parsedSec() + 360}` + "deg");
+
+
+
+function Ballons()
+{
+  document.getElementById("congratulation").style.top = "150px";
+  document.getElementById("ballonscontainer").style.top = "320px";
+  document.getElementById("winaudio").play();
+  document.getElementById("winmusic").play();
+}

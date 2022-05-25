@@ -55,7 +55,8 @@ body{
 
 /* colored board peices */
 .black {
-    background-color: rgb(168, 168, 247);
+/*     background-color: rgb(168, 168, 247); */
+    background-color: black;
 }
 .white {
     background-color: rgb(253, 199, 246);

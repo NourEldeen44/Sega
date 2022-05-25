@@ -244,7 +244,7 @@ function Timer() {
   timer = setInterval(function () {
     document.getElementById("time").innerHTML = Time;
     Time--;
-    if (Time == 0) {
+    if (Time == -1) {
       playCounter++;
       playCounter % 2 != 0
         ? (document.getElementById("role").style.filter = "invert(100%)")

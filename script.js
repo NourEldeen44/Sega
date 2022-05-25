@@ -70,11 +70,13 @@ boardPieces.forEach(function (peice) {
     if (peice.children.length > 0) {
       console.log("err unvalid move!!!");
       notify.innerHTML = "Unvalid move!";
+      Warning();
     }
     // if trying to move a rock in the same peice that is already holding it
     else if (peiceCol == focusedRockCol && peicerow == focusedRockRow) {
       console.log("can't move in the same place !");
       notify.innerHTML = "You can't move in the same place !";
+      Warning();
     }
     // if first move
     else if (
@@ -96,6 +98,7 @@ boardPieces.forEach(function (peice) {
         } else {
           console.log("unvalid move!!!");
           notify.innerHTML = "Unvalid move!";
+          Warning();
         }
       }
       //black player turn
@@ -110,10 +113,12 @@ boardPieces.forEach(function (peice) {
         } else {
           console.log("unvalid move!!!");
           notify.innerHTML = "Unvalid move!";
+          Warning();
         }
       } else {
         console.log("unvalid!!!!: other player's move");
         notify.innerHTML = "Unvalid move, it's other player role!";
+        Warning();
       }
     }
     //if not the first play
@@ -139,6 +144,7 @@ boardPieces.forEach(function (peice) {
         } else {
           console.log("unvalid move!!!");
           notify.innerHTML = "Unvalid move!";
+          Warning();
         }
       }
 
@@ -158,10 +164,12 @@ boardPieces.forEach(function (peice) {
         } else {
           console.log("unvalid move!!!");
           notify.innerHTML = "Unvalid move!";
+          Warning();
         }
       } else {
         console.log("unvalid!!!!: other player's move");
         notify.innerHTML = "Unvalid move, it's other player role!";
+        Warning();
       }
     }
     // skip the next rock move
@@ -186,10 +194,12 @@ boardPieces.forEach(function (peice) {
       } else {
         console.log("unvalid!!!!: other player's move");
         notify.innerHTML = "Unvalid move, it's other player role!";
+        Warning();
       }
     } else {
       console.log("unvalid move!!!");
       notify.innerHTML = "Unvalid move!";
+      Warning();
     }
 
     //resetting focusedId
@@ -259,6 +269,12 @@ function musicPlay() {
     mplay = false;
   }
 }
+
+function Warning()
+{
+  document.getElementById("warning").play();
+}
+  
 
 //watch
 var fullTime = new Date();

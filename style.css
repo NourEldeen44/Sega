@@ -97,3 +97,33 @@ img[src="rock.png"]{
 i{
     cursor: pointer;
 }
+
+
+/*============== Congratulation =================*/
+#ballonscontainer{
+        position: absolute;
+        text-align: center;
+        z-index: 4;
+        top: -400px;
+        transition-property: top;
+        transition-duration: 2s;
+}
+#ballonscontainer>img{
+        width: 15%;
+        z-index: 4;
+}
+#congratulation{
+        position: absolute;
+        text-align: center;
+        font-size: 4rem;
+        top: -400px;
+        width: 100%;
+        transition-property: top;
+        transition-duration: 2s;
+}
+#congratulation>i{
+        color: rgb(255, 230, 0);
+        background-color: rgb(199, 4, 4);
+        border-radius: 50%;
+}
+

@@ -94,4 +94,6 @@ img[src="rock.png"]{
 .Resetbtn{
     cursor: pointer;
 }
-
+i{
+    cursor: pointer;
+}

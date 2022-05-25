@@ -80,7 +80,7 @@
     width: 2%;
     height: 2%;
     border-radius: inherit;
-    border: 1.8px solid var(--main-color-1);
+    border: 1.8px solid rgb(168, 168, 247);
     position: absolute;
     z-index: 4;
 }

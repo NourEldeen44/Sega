@@ -68,7 +68,7 @@
     border-left-color: transparent;
     border-right-color:transparent ;
     border-top-color:transparent ;
-    border-bottom-color: #dc12ff;
+    border-bottom-color: black;
     animation-name: spin-circle;
     animation-duration: 1s;
     animation-timing-function: linear;

@@ -45,7 +45,7 @@
     margin: 100px auto;
     background-color: #ddd;
     border-radius: 50%;
-    border: 10px solid black;
+    border: 10px solid var(--main-color-1);
     position: relative;
     display: flex;
     justify-content: center;
@@ -76,7 +76,7 @@
 }
 .test-div::after{
     content: "";
-    background-color: black;
+    background-color: var(--main-color-1);
     width: 2%;
     height: 2%;
     border-radius: inherit;

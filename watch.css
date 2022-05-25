@@ -45,7 +45,7 @@
     margin: 100px auto;
     background-color: #ddd;
     border-radius: 50%;
-    border: 10px solid var(--main-color-1);
+    border: 10px solid black;
     position: relative;
     display: flex;
     justify-content: center;

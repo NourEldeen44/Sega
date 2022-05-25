@@ -76,11 +76,11 @@
 }
 .test-div::after{
     content: "";
-    background-color: var(--main-color-1);
+    background-color: black;
     width: 2%;
     height: 2%;
     border-radius: inherit;
-    border: 1.8px solid var(--main-color-1);
+    border: 1.8px solid black;
     position: absolute;
     z-index: 4;
 }

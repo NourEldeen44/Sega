@@ -42,7 +42,7 @@
 .test-div{
     width: 250px;
     height: 250px;
-    margin: 100px auto;
+    margin: 100px auto 0 auto;
     background-color: #ddd;
     border-radius: 50%;
     border: 10px solid var(--main-color-1);

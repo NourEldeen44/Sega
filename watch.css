@@ -1,0 +1,396 @@
+@keyframes spin-circle {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+ }
+ @keyframes spin-secs-hand {
+    from{
+        transform: rotate(var(--secDeg));
+        transform-origin:center bottom;
+    }
+    to{
+        transform: rotate(var(--secMax));
+        transform-origin:center bottom;
+    }
+ }
+ @keyframes spin-mins-hand {
+    from{
+        transform: rotate(var(--minDeg));
+        transform-origin:center bottom;
+    }
+    to{
+        transform: rotate(var(--minMax));
+        transform-origin:center bottom;
+    }
+ }
+ @keyframes spin-hrs-hand {
+    from{
+        transform: rotate(var(--hourDeg));/* 45m*6deg */
+        transform-origin:center bottom;
+    }
+    to{
+        transform: rotate(var(--hourMax)); /*360deg+270deg*/
+        transform-origin:center bottom;
+    }
+ }
+:root{
+    --main-color-1:#6d5b8d;
+}
+.test-div{
+    width: 250px;
+    height: 250px;
+    margin: 100px auto 0 auto;
+    background-color: #ddd;
+    border-radius: 50%;
+    border: 10px solid var(--main-color-1);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+@media screen and (max-width:992px) {
+    .test-div{
+        display: none;
+    }
+}
+.test-div::before{
+    content: "";
+    background-color: transparent;
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    border-radius: inherit;
+    border: inherit;
+    border-left-color: transparent;
+    border-right-color:transparent ;
+    border-top-color:transparent ;
+    border-bottom-color: black;
+    animation-name: spin-circle;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count:infinite ;
+}
+.test-div::after{
+    content: "";
+    background-color: var(--main-color-1);
+    width: 2%;
+    height: 2%;
+    border-radius: inherit;
+    border: 1.8px solid rgb(168, 168, 247);
+    position: absolute;
+    z-index: 4;
+}
+.test-div .ar-1{
+    background-color: gray;
+    position: absolute;
+    width: 5px;
+    height: 50px;
+    top: 0%;
+}
+.test-div .ar-1::before{
+    content: "";
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    border: 3px solid gray;
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+    border-right-color: transparent;
+    top: 0%;
+    transform: translate(-41%,50px);
+}
+.test-div .one{
+    background-color: transparent;
+    position: absolute;
+    width: 2px;
+    height: 15px;
+    right: 25%;
+    top: 20px;
+    transform: rotate(30deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--main-color-1);
+    font-size: 14px;
+    font-weight: 600;
+}
+.one::before{
+    content: "";
+    background-color: gray;
+    width: 2px;
+    height: 10px;
+    top: 15px;
+    position: absolute;
+}
+
+.test-div .two{
+    background-color: transparent;
+    position: absolute;
+    width: 2px;
+    height: 15px;
+    top: 25%;
+    right: 20px;
+    transform: rotate(60deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--main-color-1);
+    font-size: 14px;
+    font-weight: 600;
+}
+.two::before{
+    content: "";
+    background-color: gray;
+    width: 2px;
+    height: 10px;
+    top: 15px;
+    position: absolute;
+}
+
+.test-div .ar-2{
+    background-color: gray;
+    position: absolute;
+    height: 5px;
+    width: 50px;
+    right: 0%;  
+}
+.test-div .ar-2::before{
+    content: "";
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    border: 3px solid gray;
+    border-left-color: transparent;
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+    right: 0%;
+    transform: translate(-50px,-5%);
+}
+.test-div .four{
+    background-color: transparent;
+    position: absolute;
+    width: 2px;
+    height: 15px;
+    bottom: 25%;
+    right: 20px;
+    transform: rotate(120deg) rotateZ(180deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--main-color-1);
+    font-size: 14px;
+    font-weight: 600;
+}
+.four::before{
+    content: "";
+    background-color: gray;
+    width: 2px;
+    height: 10px;
+    bottom: 15px;
+    position: absolute;
+}
+
+.test-div .five{
+    background-color: transparent;
+    position: absolute;
+    width: 2px;
+    height: 15px;
+    right: 25%;
+    bottom: 20px;
+    transform: rotate(150deg) rotateZ(180deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--main-color-1);
+    font-size: 14px;
+    font-weight: 600;
+}
+.five::before{
+    content: "";
+    background-color: gray;
+    width: 2px;
+    height: 10px;
+    bottom: 15px;
+    position: absolute;
+}
+
+.test-div .ar-3{
+    background-color: gray;
+    position: absolute;
+    width: 5px;
+    height: 50px;
+    bottom: 0%;
+}
+.test-div .ar-3::before{
+    content: "";
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    border: 3px solid gray;
+    border-left-color: transparent;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    bottom: 0%;
+    transform: translate(-41%,-50px);
+
+}
+
+.test-div .seven{
+    background-color: transparent;
+    position: absolute;
+    width: 2px;
+    height: 15px;
+    left: 25%;
+    bottom: 20px;
+    transform: rotate(210deg) rotateZ(180deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--main-color-1);
+    font-size: 14px;
+    font-weight: 600;
+}
+.seven::before{
+    content: "";
+    background-color: gray;
+    width: 2px;
+    height: 10px;
+    bottom: 15px;
+    position: absolute;
+}
+.test-div .eight{
+    background-color: transparent;
+    position: absolute;
+    width: 2px;
+    height: 15px;
+    bottom: 25%;
+    left: 20px;
+    transform: rotate(240deg) rotateZ(180deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--main-color-1);
+    font-size: 14px;
+    font-weight: 600;
+}
+.eight::before{
+    content: "";
+    background-color: gray;
+    width: 2px;
+    height: 10px;
+    bottom: 15px;
+    position: absolute;
+}
+
+
+.test-div .ar-4{
+    background-color: gray;
+    position: absolute;
+    height: 5px;
+    width: 50px;
+    left: 0%;  
+}
+.test-div .ar-4::before{
+    content: "";
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    border: 3px solid gray;
+    border-right-color: transparent;
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+    left: 0%;
+    transform: translate(50px,-5%);
+}
+.test-div .ten{
+    background-color: transparent;
+    position: absolute;
+    width: 2px;
+    height: 15px;
+    top: 25%;
+    left: 20px;
+    transform: rotate(300deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--main-color-1);
+    font-size: 14px;
+    font-weight: 600;
+}
+.ten::before{
+    content: "";
+    background-color: gray;
+    width: 2px;
+    height: 10px;
+    top: 15px;
+    position: absolute;
+}
+.test-div .eleven{
+    background-color: transparent;
+    position: absolute;
+    width: 2px;
+    height: 15px;
+    left: 25%;
+    top: 20px;
+    transform: rotate(330deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--main-color-1);
+    font-size: 14px;
+    font-weight: 600;
+}
+.eleven::before{
+    content: "";
+    background-color: gray;
+    width: 2px;
+    height: 10px;
+    top: 15px;
+    position: absolute;
+}
+
+.test-div .watch-hand-secs{
+    background-color:var(--main-color-1);
+    width: 2px;
+    height: 35%;
+    position: absolute;
+    z-index: 3;
+    bottom: 50%;
+    animation-name: spin-secs-hand;
+    animation-duration: 60s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    border-radius: 20%;
+}
+.test-div .watch-hand-mins{
+    background-color: transparent;
+    border: 2px double var(--main-color-1);
+    width: 0px;
+    height: 28%;
+    position: absolute;
+    z-index: 1;
+    bottom: 50%;
+    animation-name: spin-mins-hand;
+    animation-duration: 3600s;/* 60s*60s */
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    border-radius: 20%;
+}
+.test-div .watch-hand-hrs{
+    background-color: transparent;
+    border: 2px double var(--main-color-1);
+    width: 0px;
+    height: 20%;
+    position: absolute;
+    z-index: 2;
+    bottom: 50%;
+    animation-name: spin-hrs-hand;
+    animation-duration: 43200s; /* 60s*60s*12 */
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    border-radius: 50% 50% 0% 0%;
+}

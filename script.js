@@ -6,10 +6,15 @@ var focusedRock;
 var focusedRockRow;
 var focusedRockCol;
 var focusedRockColor;
+var fix = false;
 
 //onload
 function Load(event) {
   playCounter = parseInt(location.search.split("=")[1]);
+  if(playCounter == 1)
+  {
+    fix = true;
+  }
   playCounter % 2 != 0
     ? (document.getElementById("role").style.filter = "invert(100%)")
     : (document.getElementById("role").style.filter = "brightness(125%)");
@@ -89,10 +94,12 @@ boardPieces.forEach(function (peice) {
     }
     // if first move
     else if (
-      (playCounter <= 1 &&
-        parseInt(focusedRockRow) == parseInt(peicerow) + 2) ||
-      (playCounter <= 1 && parseInt(focusedRockRow) == parseInt(peicerow)) || //  ازاي اول مرة يلعب فنفس الصف؟ بتشيل بجاية مش فاكرها??????
-      (playCounter <= 1 && parseInt(focusedRockRow) == parseInt(peicerow) - 2)
+      (playCounter <= 1 && parseInt(focusedRockRow) == parseInt(peicerow) + 2) ||
+      (playCounter <= 1 && parseInt(focusedRockRow) == parseInt(peicerow))     ||      //  ازاي اول مرة يلعب فنفس الصف؟ بتشيل بجاية مش فاكرها??????
+      (playCounter <= 1 && parseInt(focusedRockRow) == parseInt(peicerow) - 2) ||
+      (playCounter <= 2 && parseInt(focusedRockRow) == parseInt(peicerow) + 2 && fix==true)  ||
+      (playCounter <= 2 && parseInt(focusedRockRow) == parseInt(peicerow)     && fix==true)  ||     
+      (playCounter <= 2 && parseInt(focusedRockRow) == parseInt(peicerow) - 2 && fix==true)
     ) {
       //white player turn
       if (playCounter % 2 == 0 && focusedRockColor == "whiteRock") {

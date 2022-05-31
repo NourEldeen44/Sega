@@ -73,7 +73,7 @@ var notify = document.getElementById("notify");
 boardPieces.forEach(function (peice) {
   peice.addEventListener("click", function () {
     notify.innerHTML = "continue playing ...";
-
+console.log(fix, playCounter)
     //Params
     var peiceCol = peice.classList[0];
     var peicecolor = peice.classList[1];
